@@ -1,6 +1,7 @@
 package com.example.rickandmorty.di
 
 import android.app.Application
+import com.example.movies.di.ListCharactersModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration

@@ -6,20 +6,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movies.data.models.Movies
 import com.example.movies.domain.usecase.MoviesUseCase
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class Moviesviewmodel(private val useCase: MoviesUseCase) : ViewModel() {
+class MoviesViewModel(
+    private val useCase: MoviesUseCase,
+    private val coroutinesDispatcherIO: CoroutineDispatcher = Dispatchers.IO,
+    private val coroutinesDispatcherMain: CoroutineDispatcher = Dispatchers.Main
+) : ViewModel() {
 
     private val _items = MutableLiveData<Movies>()
-//observer
+
+    //observer
     val items: LiveData<Movies>
         get() = _items
 
     fun fetchCountries() {
-        viewModelScope.launch(Dispatchers.IO) {
-            withContext(Dispatchers.Main) {
+        viewModelScope.launch(coroutinesDispatcherIO) {
+            withContext(coroutinesDispatcherMain) {
                 _items.value = useCase.invoke().body()
             }
         }

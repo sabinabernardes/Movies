@@ -7,7 +7,7 @@ import com.example.movies.data.models.Result
 import com.example.movies.databinding.ItemMovieBinding
 
 class MoviesListAdapter(
-    var listMovies: List<Result>
+    private var listMovies: List<Result>
 ) : RecyclerView.Adapter<MoviesListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesListViewHolder {
