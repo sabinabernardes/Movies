@@ -4,7 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.data.models.Results
-import com.example.movies.databinding.ItemMovieBinding
+
+import com.example.movies.databinding.ListItemBinding
 
 class MoviesListAdapter(
     private var listMovies: List<Results>
@@ -12,7 +13,7 @@ class MoviesListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesListViewHolder {
         return MoviesListViewHolder(
-            ItemMovieBinding.inflate(
+            ListItemBinding.inflate(
                 LayoutInflater.from(
                     parent.context
                 ), parent, false

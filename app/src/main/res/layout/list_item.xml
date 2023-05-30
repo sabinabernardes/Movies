@@ -23,11 +23,9 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                tools:layout_editor_absoluteX="71dp"
-                tools:layout_editor_absoluteY="301dp"
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
@@ -38,7 +36,7 @@
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/gender"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

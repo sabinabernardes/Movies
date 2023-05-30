@@ -1,34 +1,31 @@
 package com.example.movies.presentation.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movies.data.models.Movies
 import com.example.movies.domain.usecase.MoviesUseCase
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import com.example.movies.presentation.state.MovieState
+import com.example.movies.presentation.state.MoviesIntent
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+
+private const val IS_LOADING = true
 
 class MoviesViewModel(
     private val useCase: MoviesUseCase,
-    private val coroutinesDispatcherIO: CoroutineDispatcher = Dispatchers.IO,
-    private val coroutinesDispatcherMain: CoroutineDispatcher = Dispatchers.Main
 ) : ViewModel() {
 
-    private val _items = MutableLiveData<Movies>()
+    val movieIntent = Channel<MoviesIntent>(Channel.UNLIMITED)
+    val movieState = MutableStateFlow<MovieState>(MovieState.Inactive)
 
-    //observer
-    val items: LiveData<Movies>
-        get() = _items
-
-    fun fetchCountries() {
-        viewModelScope.launch(coroutinesDispatcherIO) {
-            withContext(coroutinesDispatcherMain) {
-                _items.value = useCase.invoke().body()
+    fun fetchMovies() {
+        viewModelScope.launch {
+            movieState.value = MovieState.Loading(isLoading = IS_LOADING)
+            movieState.value = try {
+                MovieState.ResponseData(useCase.invoke())
+            } catch (e: Exception) {
+                MovieState.Error(e.localizedMessage)
             }
         }
     }
-
 }
