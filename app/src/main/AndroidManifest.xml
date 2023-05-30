@@ -10,12 +10,12 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.example.rickandmorty.di.MyApp"
+        android:name="com.example.rickandmorty.di.Movies"
         android:supportsRtl="true"
         android:theme="@style/Theme.Movies"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.view.MainActivity"
+            android:name=".utils.common.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

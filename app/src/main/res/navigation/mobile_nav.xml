@@ -7,7 +7,24 @@
 
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.example.movies.presentation.fragment.MoviesFragment"
+        android:name="com.example.movies.movies.presentation.fragment.MoviesFragment"
         android:label="fragment_movies"
-        tools:layout="@layout/fragment_movies" />
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_moviesFragment_to_detailsMoviesFragment"
+            app:destination="@id/detailsMoviesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsMoviesFragment"
+        android:name="com.example.movies.details.presentantion.DetailsMoviesFragment"
+        android:label="fragment_details_movies"
+        tools:layout="@layout/fragment_details_movies">
+        <action
+            android:id="@+id/action_detailsMoviesFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <argument
+            android:name="id"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
 </navigation>
