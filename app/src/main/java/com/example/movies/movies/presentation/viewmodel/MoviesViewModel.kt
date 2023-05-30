@@ -4,8 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movies.movies.domain.usecase.MoviesUseCase
 import com.example.movies.movies.presentation.state.MovieState
-import com.example.movies.movies.presentation.state.MoviesIntent
-import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -15,7 +13,6 @@ class MoviesViewModel(
     private val useCase: MoviesUseCase,
 ) : ViewModel() {
 
-    val movieIntent = Channel<MoviesIntent>(Channel.UNLIMITED)
     val movieState = MutableStateFlow<MovieState>(MovieState.Inactive)
 
     fun fetchMovies() {

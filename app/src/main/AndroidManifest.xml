@@ -10,7 +10,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.example.rickandmorty.di.Movies"
+        android:name=".utils.common.di.Movies"
         android:supportsRtl="true"
         android:theme="@style/Theme.Movies"
         tools:targetApi="31">

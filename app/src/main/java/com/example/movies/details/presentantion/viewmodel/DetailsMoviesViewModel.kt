@@ -2,29 +2,26 @@ package com.example.movies.details.presentantion.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movies.movies.domain.usecase.MoviesUseCase
-import com.example.movies.movies.presentation.state.MovieState
-import com.example.movies.movies.presentation.state.MoviesIntent
-import kotlinx.coroutines.channels.Channel
+import com.example.movies.movies.domain.usecase.DetailsMoviesUseCase
+import com.example.movies.movies.presentation.state.DetailsMovieState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 private const val IS_LOADING = true
 
 class DetailsMoviesViewModel(
-    private val useCase: MoviesUseCase,
+    private val useCase: DetailsMoviesUseCase,
 ) : ViewModel() {
 
-    val movieIntent = Channel<MoviesIntent>(Channel.UNLIMITED)
-    val movieState = MutableStateFlow<MovieState>(MovieState.Inactive)
+    val detailsMovieState = MutableStateFlow<DetailsMovieState>(DetailsMovieState.Inactive)
 
-    fun fetchMovies() {
+    fun fetchDetailsMovies(id: Int) {
         viewModelScope.launch {
-            movieState.value = MovieState.Loading(isLoading = IS_LOADING)
-            movieState.value = try {
-                MovieState.ResponseData(useCase.invoke())
+            detailsMovieState.value = DetailsMovieState.Loading(isLoading = IS_LOADING)
+            detailsMovieState.value = try {
+                DetailsMovieState.ResponseData(useCase.invoke(id = id))
             } catch (e: Exception) {
-                MovieState.Error(e.localizedMessage)
+                DetailsMovieState.Error(e.localizedMessage)
             }
         }
     }

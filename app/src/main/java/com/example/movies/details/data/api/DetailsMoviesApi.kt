@@ -4,13 +4,17 @@ import com.example.movies.details.data.api.DetailsMoviesApi.PatchConstants.DETAI
 import com.example.movies.details.data.models.DetailsMoviesResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface DetailsMoviesApi {
 
     @GET(DETAILS)
-    suspend fun getDetailsMovies(@Path("movie_id") movie_id: Int): DetailsMoviesResponse
+    suspend fun getDetailsMovies(
+        @Path("movie_id") movie_id: Int,
+        @Query("api_key") apiKey: String,
+    ): DetailsMoviesResponse
 
     object PatchConstants {
-        const val DETAILS = "movie/{movie_id}"
+        const val DETAILS = "{movie_id}"
     }
 }
