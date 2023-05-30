@@ -3,11 +3,11 @@ package com.example.movies.di
 import com.example.movies.data.datasource.MoviesDataSource
 import com.example.movies.data.datasource.MoviesDataSourceImpl
 import com.example.movies.data.repository.MoviesRepositoryImpl
+import com.example.movies.data.service.RetrofitService
 import com.example.movies.domain.repository.MoviesRepository
 import com.example.movies.domain.usecase.MoviesUseCase
 import com.example.movies.presentation.viewmodel.MoviesViewModel
 import com.example.rickandmorty.di.FeatureModule
-import com.example.rickandmorty.utils.RetrofitService
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

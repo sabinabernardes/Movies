@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+def apikeyFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyFile))
+
 android {
     namespace 'com.example.movies'
     compileSdk 33
@@ -15,6 +19,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "TOKEN_KEY", apikeyProperties['TOKEN_KEY']
+        buildConfigField "String", "API_KEY", apikeyProperties['API_KEY']
     }
 
     buildTypes {

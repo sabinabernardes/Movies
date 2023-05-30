@@ -1,4 +1,4 @@
-package com.example.rickandmorty.utils
+package com.example.movies.data.service
 
 import com.example.movies.data.api.MoviesApi
 import com.google.gson.GsonBuilder
