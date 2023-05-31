@@ -26,5 +26,9 @@
             android:name="id"
             android:defaultValue="1"
             app:argType="integer" />
+        <argument
+            android:name="poster"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
 </navigation>

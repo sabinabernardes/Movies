@@ -1,4 +1,4 @@
-package com.example.movies.movies.presentation.state
+package com.example.movies.details.presentantion.state
 
 import com.example.movies.details.data.models.DetailsMoviesResponse
 

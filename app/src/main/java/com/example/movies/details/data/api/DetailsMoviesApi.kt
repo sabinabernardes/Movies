@@ -12,6 +12,7 @@ interface DetailsMoviesApi {
     suspend fun getDetailsMovies(
         @Path("movie_id") movie_id: Int,
         @Query("api_key") apiKey: String,
+        @Query("language") language: String,
     ): DetailsMoviesResponse
 
     object PatchConstants {

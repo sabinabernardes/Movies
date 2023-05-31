@@ -11,7 +11,7 @@ data class DetailsMoviesResponse(
     @SerialName("backdrop_path")
     val backdropPath: String,
     @SerialName("belongs_to_collection")
-    val belongsToCollection: BelongsToCollection,
+    val belongsToCollection: Any,
     @SerialName("budget")
     val budget: Int,
     @SerialName("genres")
@@ -57,18 +57,6 @@ data class DetailsMoviesResponse(
     @SerialName("vote_count")
     val voteCount: Int
 ) {
-    @Serializable
-    data class BelongsToCollection(
-        @SerialName("backdrop_path")
-        val backdropPath: String,
-        @SerialName("id")
-        val id: Int,
-        @SerialName("name")
-        val name: String,
-        @SerialName("poster_path")
-        val posterPath: String
-    )
-
     @Serializable
     data class Genre(
         @SerialName("id")

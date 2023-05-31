@@ -71,8 +71,10 @@ class MoviesFragment : Fragment() {
 
     private fun gotoDetails(results: Results) {
         val id = results.id
+        val poster = results.backdrop_path
         val action = MoviesFragmentDirections.actionMoviesFragmentToDetailsMoviesFragment(
-            id = id
+            id = id,
+            poster = poster
         )
 
         view?.findNavController()?.navigate(action)

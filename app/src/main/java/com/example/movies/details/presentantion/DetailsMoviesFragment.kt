@@ -10,12 +10,14 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.movies.databinding.FragmentDetailsMoviesBinding
+import com.example.movies.details.data.models.DetailsMoviesResponse
+import com.example.movies.details.presentantion.state.DetailsMovieState
 import com.example.movies.details.presentantion.viewmodel.DetailsMoviesViewModel
-import com.example.movies.movies.presentation.state.DetailsMovieState
+import com.example.movies.utils.common.service.POSTER_BASE_URL
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 public class DetailsMoviesFragment : Fragment() {
     private lateinit var binding: FragmentDetailsMoviesBinding
@@ -26,7 +28,6 @@ public class DetailsMoviesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         viewModel.fetchDetailsMovies(id = args.id)
-
     }
 
     override fun onCreateView(
@@ -46,7 +47,7 @@ public class DetailsMoviesFragment : Fragment() {
                     }
                     is DetailsMovieState.ResponseData -> {
                         getState(isLoading = false)
-                        binding.textView.text = it.movies?.title
+                        bindMovies(it.movies)
                         //renderList(it.movies?.results)
                     }
                     is DetailsMovieState.Error -> {
@@ -58,6 +59,16 @@ public class DetailsMoviesFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private fun bindMovies(details: DetailsMoviesResponse?) {
+        binding.apply {
+            title.text = details?.title
+            overview.text = details?.overview
+            Glide.with(root.context)
+                .load(POSTER_BASE_URL + args.poster)
+                .into(posterMovie)
         }
     }
 
