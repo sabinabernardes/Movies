@@ -25,6 +25,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="100dp"
                 android:layout_height="140dp"
+                android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 tools:srcCompat="@tools:sample/avatars" />
 
