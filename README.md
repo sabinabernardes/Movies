@@ -45,7 +45,7 @@ https://github.com/sabinabernardes/Movies/assets/66752747/777db3d8-4823-4e99-9dc
 
 ## Pacotes
 O projeto se encontra organizado como mostrado na figura abaixo.
-Obdescendo uma arquitetura mvvm+clean
+obedecendo uma arquitetura mvvm+clean
 - Data
 
 - Domain
