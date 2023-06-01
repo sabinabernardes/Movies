@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.databinding.FragmentMoviesBinding
 import com.example.movies.movies.data.models.Results
 import com.example.movies.movies.presentation.adapter.MoviesListAdapter
@@ -81,9 +82,12 @@ class MoviesFragment : Fragment() {
     }
 
     private fun renderList(movies: List<Results>?) {
-        binding.rvMovies.layoutManager = LinearLayoutManager(context)
+        binding.rvMovies.layoutManager = LinearLayoutManager(
+            context,
+            RecyclerView.HORIZONTAL,
+            false
+        )
         val adapter = movies?.let { MoviesListAdapter(it, ::gotoDetails) }
         binding.rvMovies.adapter = adapter
-        adapter?.notifyDataSetChanged()
     }
 }

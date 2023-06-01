@@ -3,4 +3,7 @@
 
     <dimen name="margin">16dp</dimen>
     <dimen name="zero_grid">0dp</dimen>
+    <dimen name="radios">20dp</dimen>
+    <dimen name="maxwidth">20dp</dimen>
+    <dimen name="maxlines">3</dimen>
 </resources>

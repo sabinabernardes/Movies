@@ -10,7 +10,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".utils.common.di.Movies"
+        android:name=".utils.common.di.MoviesApp"
         android:supportsRtl="true"
         android:theme="@style/Theme.Movies"
         tools:targetApi="31">

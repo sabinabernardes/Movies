@@ -11,11 +11,11 @@ data class DetailsMoviesResponse(
     @SerialName("backdrop_path")
     val backdropPath: String,
     @SerialName("belongs_to_collection")
-    val belongsToCollection: Any,
+    val belongsToCollection: Any?,
     @SerialName("budget")
     val budget: Int,
     @SerialName("genres")
-    val genres: List<Genre>,
+    val genres: List<Genre>?,
     @SerialName("homepage")
     val homepage: String,
     @SerialName("id")
@@ -33,9 +33,9 @@ data class DetailsMoviesResponse(
     @SerialName("poster_path")
     val posterPath: String,
     @SerialName("production_companies")
-    val productionCompanies: List<ProductionCompany>,
+    val productionCompanies: List<ProductionCompany>?,
     @SerialName("production_countries")
-    val productionCountries: List<ProductionCountry>,
+    val productionCountries: List<ProductionCountry>?,
     @SerialName("release_date")
     val releaseDate: String,
     @SerialName("revenue")
@@ -43,7 +43,7 @@ data class DetailsMoviesResponse(
     @SerialName("runtime")
     val runtime: Int,
     @SerialName("spoken_languages")
-    val spokenLanguages: List<SpokenLanguage>,
+    val spokenLanguages: List<SpokenLanguage>?,
     @SerialName("status")
     val status: String,
     @SerialName("tagline")
