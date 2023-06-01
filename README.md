@@ -45,4 +45,5 @@ https://github.com/sabinabernardes/Movies/assets/66752747/777db3d8-4823-4e99-9dc
 
 
 ## Pacotes
+![Captura de Tela 2023-06-01 às 16 28 15](https://github.com/sabinabernardes/Movies/assets/66752747/0f160240-3e02-45b9-8d0e-1c4132a4af86)
 
