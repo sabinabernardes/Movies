@@ -1,4 +1,4 @@
-package com.example.movies.utils.common.service
+package com.example.movies.common.service
 
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit

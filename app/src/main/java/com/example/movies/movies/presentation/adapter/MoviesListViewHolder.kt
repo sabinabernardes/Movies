@@ -2,9 +2,9 @@ package com.example.movies.movies.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.movies.common.service.POSTER_BASE_URL
 import com.example.movies.databinding.ListItemBinding
 import com.example.movies.movies.data.models.Results
-import com.example.movies.utils.common.service.POSTER_BASE_URL
 
 class MoviesListViewHolder(
     private val binding: ListItemBinding

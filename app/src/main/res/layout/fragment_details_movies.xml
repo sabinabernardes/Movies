@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_movies"
-    tools:context=".details.presentantion.DetailsMoviesFragment">
+    tools:context=".details.presentantion.view.DetailsMoviesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

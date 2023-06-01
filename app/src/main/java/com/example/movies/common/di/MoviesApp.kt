@@ -1,4 +1,4 @@
-package com.example.movies.utils.common.di
+package com.example.movies.common.di
 
 import android.app.Application
 import com.example.movies.details.di.DetailsModule.detailsMoviesModule

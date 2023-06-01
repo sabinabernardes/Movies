@@ -1,4 +1,4 @@
-package com.example.movies.utils.common.di
+package com.example.movies.common.di
 
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module

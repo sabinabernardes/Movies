@@ -1,4 +1,4 @@
-package com.example.movies.details.presentantion
+package com.example.movies.details.presentantion.view
 
 import android.os.Bundle
 import android.util.Log
@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.example.movies.common.service.POSTER_BASE_URL
 import com.example.movies.databinding.FragmentDetailsMoviesBinding
 import com.example.movies.details.data.models.DetailsMoviesResponse
 import com.example.movies.details.presentantion.state.DetailsMovieState
 import com.example.movies.details.presentantion.viewmodel.DetailsMoviesViewModel
-import com.example.movies.utils.common.service.POSTER_BASE_URL
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

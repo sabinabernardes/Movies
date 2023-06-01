@@ -1,5 +1,6 @@
 package com.example.movies.movies.di
 
+import com.example.movies.common.service.RetrofitService
 import com.example.movies.movies.data.api.MoviesApi
 import com.example.movies.movies.data.datasource.MoviesDataSource
 import com.example.movies.movies.data.datasource.MoviesDataSourceImpl
@@ -7,7 +8,6 @@ import com.example.movies.movies.data.repository.MoviesRepositoryImpl
 import com.example.movies.movies.domain.repository.MoviesRepository
 import com.example.movies.movies.domain.usecase.MoviesUseCase
 import com.example.movies.movies.presentation.viewmodel.MoviesViewModel
-import com.example.movies.utils.common.service.RetrofitService
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
