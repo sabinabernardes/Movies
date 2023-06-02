@@ -68,7 +68,6 @@ Camada de application
 
 Modulo da Feature
 
-![ModuloFeature](../../Desktop/Captura de Tela 2023-06-02 às 08.35.37.png)
 ![Captura de Tela 2023-06-02 às 08 35 37](https://github.com/sabinabernardes/Movies/assets/66752747/99d23be2-a2c1-48d2-bf5e-dc71fdfd366d)
 
 ## Testes
