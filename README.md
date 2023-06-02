@@ -63,21 +63,27 @@ Em uma arquitetura mvvm+clean e cada feature no seu package
 Neste projeto é utilizado o koin para fazer as chamadas dos modulos
 
 Camada de application
-![Application](../../Desktop/Captura de Tela 2023-06-02 às 08.35.23.png)
+
+![Captura de Tela 2023-06-02 às 08 35 23](https://github.com/sabinabernardes/Movies/assets/66752747/586ab88b-4bb6-41f9-8d07-24bc6ee1e8ee)
 
 Modulo da Feature
+
 ![ModuloFeature](../../Desktop/Captura de Tela 2023-06-02 às 08.35.37.png)
+![Captura de Tela 2023-06-02 às 08 35 37](https://github.com/sabinabernardes/Movies/assets/66752747/99d23be2-a2c1-48d2-bf5e-dc71fdfd366d)
 
 ## Testes
 
 A Figura abaixo mostra a organização dos packages dos testes unitários
-![Testes](../../Desktop/Captura de Tela 2023-06-02 às 08.48.00.png)
+
+![Captura de Tela 2023-06-02 às 08 48 00](https://github.com/sabinabernardes/Movies/assets/66752747/9370ac54-df38-4dc7-9357-b0cc01e4ec3d)
 
 ## Gráfico de Navegação
 
 Neste projeto tambem foi utilizado a navegação entre as telas pelo navigation.
+
 Abaixo a imagem do gráfico de navegação
-![Navegação](../../Desktop/Captura de Tela 2023-06-02 às 08.45.35.png)
+
+![Captura de Tela 2023-06-02 às 08 45 35](https://github.com/sabinabernardes/Movies/assets/66752747/f65ce07c-25be-4ebe-92a2-58838570aaf8)
 
 ## Proxímos passos
 
