@@ -76,6 +76,10 @@ A Figura abaixo mostra a organização dos packages dos testes unitários
 
 ![Captura de Tela 2023-06-02 às 08 48 00](https://github.com/sabinabernardes/Movies/assets/66752747/9370ac54-df38-4dc7-9357-b0cc01e4ec3d)
 
+A figura abaixo mostra o relátorio de testes 
+
+![Captura de Tela 2023-06-02 às 16 16 44](https://github.com/sabinabernardes/Movies/assets/66752747/1b7239fb-4780-4e85-9914-af37855bde0e)
+
 ## Gráfico de Navegação
 
 Neste projeto tambem foi utilizado a navegação entre as telas pelo navigation.
