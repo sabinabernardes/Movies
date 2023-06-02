@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.databinding.FragmentMoviesBinding
 import com.example.movies.movies.data.models.Results
-import com.example.movies.movies.presentation.adapter.MoviesListAdapter
+import com.example.movies.movies.presentation.adapter.MoviesAdapter
 import com.example.movies.movies.presentation.state.MovieState
 import com.example.movies.movies.presentation.viewmodel.MoviesViewModel
 import kotlinx.coroutines.launch
@@ -42,25 +42,41 @@ class MoviesFragment : Fragment() {
 
     private fun observeViewModel() {
         lifecycleScope.launch {
-            viewModel.movieState.collect {
-                when (it) {
+            viewModel.movieState.collect { state ->
+                when (state) {
                     is MovieState.Loading -> {
-                        getState(isLoading = true)
+                        handleLoadingState()
                     }
                     is MovieState.ResponseData -> {
-                        getState(isLoading = false)
-                        renderList(it.movies?.results)
+                        handleResponseDataState(state.movies?.results)
                     }
                     is MovieState.Error -> {
-                        getState(isLoading = false)
-                        Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
+                        handleErrorState(state.error)
                     }
                     else -> {
-                        Log.d("Inactive", "Initial state of StateFlow")
+                        handleInactiveState()
                     }
                 }
             }
         }
+    }
+
+    private fun handleLoadingState() {
+        getState(isLoading = true)
+    }
+
+    private fun handleResponseDataState(movies: List<Results>?) {
+        getState(isLoading = false)
+        renderList(movies)
+    }
+
+    private fun handleErrorState(error: String?) {
+        getState(isLoading = false)
+        Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+    }
+
+    private fun handleInactiveState() {
+        Log.d("Inactive", "Initial state of StateFlow")
     }
 
     private fun getState(isLoading: Boolean) {
@@ -87,7 +103,7 @@ class MoviesFragment : Fragment() {
             RecyclerView.HORIZONTAL,
             false
         )
-        val adapter = movies?.let { MoviesListAdapter(it, ::gotoDetails) }
+        val adapter = movies?.let { MoviesAdapter(it, ::gotoDetails) }
         binding.rvMovies.adapter = adapter
     }
 }

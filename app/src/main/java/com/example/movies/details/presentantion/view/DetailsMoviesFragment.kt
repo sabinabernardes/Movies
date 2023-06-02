@@ -40,26 +40,39 @@ class DetailsMoviesFragment : Fragment() {
 
     private fun observeViewModel() {
         lifecycleScope.launch {
-            viewModel.detailsMovieState.collect {
-                when (it) {
-                    is DetailsMovieState.Loading -> {
-                        getState(isLoading = true)
+            viewModel.detailsMovieState.collect { state ->
+                when (state) {
+                    is DetailsMovieState.Loading -> handleLoadingState()
+                    is DetailsMovieState.ResponseData -> state.movies?.let { movies ->
+                        handleResponseDataState(movies)
                     }
-                    is DetailsMovieState.ResponseData -> {
-                        getState(isLoading = false)
-                        bindMovies(it.movies)
+                    is DetailsMovieState.Error -> state.error?.let { error ->
+                        handleErrorState(error)
                     }
-                    is DetailsMovieState.Error -> {
-                        getState(isLoading = false)
-                        Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
-                    }
-                    else -> {
-                        Log.d("Inactive", "Initial state of StateFlow")
-                    }
+                    else -> handleInactiveState()
                 }
             }
         }
     }
+
+    private fun handleLoadingState() {
+        getState(isLoading = true)
+    }
+
+    private fun handleResponseDataState(movies: DetailsMoviesResponse) {
+        getState(isLoading = false)
+        bindMovies(movies)
+    }
+
+    private fun handleErrorState(error: String) {
+        getState(isLoading = false)
+        Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+    }
+
+    private fun handleInactiveState() {
+        Log.d("Inactive", "Initial state of StateFlow")
+    }
+
 
     private fun bindMovies(details: DetailsMoviesResponse?) {
         binding.apply {

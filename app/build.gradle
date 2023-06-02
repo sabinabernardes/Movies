@@ -104,6 +104,7 @@ dependencies {
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
     // Testing Navigation
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    implementation 'androidx.activity:activity-ktx:1.4.0'
     //mockk
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'io.mockk:mockk:1.13.4'

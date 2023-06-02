@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.databinding.ListItemBinding
 import com.example.movies.movies.data.models.Results
 
-class MoviesListAdapter(
-    private var listMovies: List<Results> = listOf(),
+class MoviesAdapter(
+    private var listMovies: List<Results> = emptyList(),
     private val listener: (launch: Results) -> Unit
 ) : RecyclerView.Adapter<MoviesListViewHolder>() {
 
