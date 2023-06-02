@@ -17,7 +17,7 @@ class DetailsMoviesRepositoryImplTest {
     private val movieId = 12345
 
     @Test
-    fun `GIVEN dataSource returns movies WHEN getMovies is called THEN return movies`() =
+    fun `GIVEN dataSource returns movies WHEN repository is called THEN return movies`() =
         runBlocking {
             // GIVEN
             val expectedMovies = DetailsMoviesHelper.detailsResponse
@@ -31,14 +31,14 @@ class DetailsMoviesRepositoryImplTest {
         }
 
     @Test
-    fun `GIVEN dataSource throws an exception WHEN getMovies is called THEN throw an exception`() =
+    fun `GIVEN dataSource throws an exception WHEN repository is called THEN throw an exception`() =
         runBlocking {
             // GIVEN
             val expectedException = Exception("An error occurred")
-            coEvery { dataSource.getDetailsMovies(1234) } throws expectedException
+            coEvery { dataSource.getDetailsMovies(movieId) } throws expectedException
 
             // WHEN
-            val result = runCatching { dataSource.getDetailsMovies(1234) }
+            val result = runCatching { dataSource.getDetailsMovies(movieId) }
 
             // THEN
             assertTrue(result.isFailure)

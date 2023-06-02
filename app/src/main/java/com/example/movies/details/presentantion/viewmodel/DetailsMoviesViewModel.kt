@@ -2,8 +2,8 @@ package com.example.movies.details.presentantion.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.movies.details.domain.usecase.DetailsMoviesUseCase
 import com.example.movies.details.presentantion.state.DetailsMovieState
-import com.example.movies.movies.domain.usecase.DetailsMoviesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 

@@ -4,10 +4,6 @@ import com.example.movies.details.data.models.DetailsMoviesResponse
 
 object DetailsMoviesHelper {
 
-    const val API_KEY = 12345
-    const val LANGUAGE = "pt-BR"
-    const val MOVIE_ID = 502356
-
     val detailsResponse =
         DetailsMoviesResponse(
             adult = false,

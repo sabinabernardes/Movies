@@ -13,7 +13,7 @@ import org.junit.Test
 
 @ExperimentalCoroutinesApi
 class MoviesDataSourceImplTest {
-    @ExperimentalCoroutinesApi
+
     @MockK
     private var moviesApi: MoviesApi = mockk(relaxed = true)
 

@@ -5,10 +5,6 @@ import com.example.movies.movies.data.models.Results
 
 object MoviesHelper {
 
-    const val API_KEY = "12345"
-    const val LANGUAGE = "pt-BR"
-    const val MOVIE_ID = 502356
-
     val moviesResponse =
         Movies(
             page = 1,

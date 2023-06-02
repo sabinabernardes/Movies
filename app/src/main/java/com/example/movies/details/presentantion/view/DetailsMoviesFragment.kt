@@ -19,7 +19,7 @@ import com.example.movies.details.presentantion.viewmodel.DetailsMoviesViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-public class DetailsMoviesFragment : Fragment() {
+class DetailsMoviesFragment : Fragment() {
     private lateinit var binding: FragmentDetailsMoviesBinding
     private val viewModel: DetailsMoviesViewModel by viewModel()
     private val args by navArgs<DetailsMoviesFragmentArgs>()
@@ -48,7 +48,6 @@ public class DetailsMoviesFragment : Fragment() {
                     is DetailsMovieState.ResponseData -> {
                         getState(isLoading = false)
                         bindMovies(it.movies)
-                        //renderList(it.movies?.results)
                     }
                     is DetailsMovieState.Error -> {
                         getState(isLoading = false)

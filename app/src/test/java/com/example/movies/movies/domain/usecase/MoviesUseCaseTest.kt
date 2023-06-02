@@ -14,7 +14,7 @@ class MoviesUseCaseTest {
     private val moviesUseCase = MoviesUseCase(repository)
 
     @Test
-    fun `GIVEN repository returns details movies WHEN invoke is called THEN return details movies`() =
+    fun `GIVEN repository returns details movies WHEN UseCase is called THEN return details movies`() =
         runBlocking {
             // GIVEN
             val expectedMovies = MoviesHelper.moviesResponse
@@ -28,7 +28,7 @@ class MoviesUseCaseTest {
         }
 
     @Test
-    fun `GIVEN repository throws an exception WHEN invoke is called THEN throw an exception`() =
+    fun `GIVEN repository throws an exception WHEN UseCase is called THEN throw an exception`() =
         runBlocking {
             // GIVEN
             val expectedException = Exception("An error occurred")

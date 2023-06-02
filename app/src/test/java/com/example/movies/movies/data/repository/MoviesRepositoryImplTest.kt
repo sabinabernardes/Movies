@@ -15,7 +15,7 @@ class MoviesRepositoryImplTest {
     private val repository = MoviesRepositoryImpl(dataSource)
 
     @Test
-    fun `GIVEN dataSource returns movies WHEN getMovies is called THEN return movies`() =
+    fun `GIVEN dataSource returns movies WHEN dataSource is called THEN return movies`() =
         runBlocking {
             // GIVEN
             val expectedMovies = MoviesHelper.moviesResponse
@@ -29,7 +29,7 @@ class MoviesRepositoryImplTest {
         }
 
     @Test
-    fun `GIVEN dataSource throws an exception WHEN getMovies is called THEN throw an exception`() =
+    fun `GIVEN dataSource throws an exception WHEN dataSource is called THEN throw an exception`() =
         runBlocking {
             // GIVEN
             val expectedException = Exception("An error occurred")
